@@ -9,7 +9,7 @@
   if (!sec || !lienzo) return;
   var ctx = lienzo.getContext('2d');
   var reducido = window.matchMedia('(prefers-reduced-motion: reduce)');
-  var guion = null, N = 96, estilo = 'realista', cache = {}, actual = -1, pend = false;
+  var guion = null, N = 116, estilo = 'realista', cache = {}, actual = -1, pend = false;
 
   function ruta(e, f) { return BASE + e + '/f' + String(f).padStart(3, '0') + '.webp'; }
   function img(e, f) {

@@ -3,3 +3,6 @@ Copyright 2026 Miguel Rodríguez Saiz
 
 Licenciado bajo la Apache License, Version 2.0 (ver LICENSE).
 Incluye un modelo de Raspberry Pi 4 Model B de la Innerscene 3D Parts Library (CC0 1.0).
+Los renders de assets/montaje/ muestran la placa Arduino Nano V3.3 (diseño © Arduino, CC BY-SA 4.0,
+https://creativecommons.org/licenses/by-sa/4.0/) y modelos 3D de KiCad packages3D (CC-BY-SA 4.0 con la
+excepción de KiCad); esos renders se ofrecen también bajo CC BY-SA 4.0.
