@@ -13,8 +13,8 @@ Web estática del **Orbit Terminal**, el ciberdeck de Miguel Rodríguez Saiz: un
 - Monitor MSI PRO MP161 E2U: envolvente del CAD del repo con las cotas publicadas por MSI (sin logo, botones ni puertos).
 - Raspberry Pi 4 Model B: [Innerscene 3D Parts Library](https://www.innerscene.com/tools/library/3d-parts/raspberry-pi-4-model-b-layout-821bd96d). CC0 1.0.
 - Arduino Nano ×2: disposición de la placa oficial Arduino Nano V3.3 (`NanoV3.3.brd`, [archivos CAD A000005](https://docs.arduino.cc/hardware/nano/)), © Arduino, CC BY-SA 4.0. Componentes con los modelos 3D de [KiCad packages3D](https://gitlab.com/kicad/libraries/kicad-packages3D), CC-BY-SA 4.0 con la excepción de KiCad.
-- Disco duro de 3,5": envolvente, taladros y posición del conector según las especificaciones SFF-8301 y SFF-8323 (SNIA). Etiqueta sin texto.
-- Placa base del HP: PCB mini-ITX de 170 × 170 mm con sus taladros estándar (posiciones del CAD) y conectores VGA y HDMI con los modelos de KiCad packages3D. El resto de la placa (disipador, RAM, otros conectores) se omite porque no hay cotas públicas ni modelo fiel.
+- Disco duro de 3,5": envolvente, taladros y posición del conector según las especificaciones SFF-8301 y SFF-8323 (SNIA). Tapa (relieve, etiqueta, tornillos) medida de una foto del prototipo, que no se publica; etiqueta sin texto legible.
+- Placa base del HP: PCB mini-ITX de 170 × 170 mm con sus taladros estándar (posiciones del CAD). RAM (2 × Kingston HyperX blu, 133,35 × 30 mm), disipador con ventilador de 50 mm, puertos traseros y conectores blancos medidos de una foto cenital del prototipo (que no se publica); algunas alturas son estimadas. VGA y HDMI con los modelos de KiCad packages3D. Se omiten los componentes pequeños, el logo y los cables.
 - Imagen en pantalla: captura de Orbit OS del repo Control-deck.
 
 Se han dejado fuera las piezas comerciales sin modelo 3D fiel: ESP8266, step-down, OLED, HAT VHF, pulsadores, tira LED, patas y cables.
