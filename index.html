@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orbit Terminal · Dos mundos, un terminal</title>
+<meta name="description" content="Orbit Terminal: terminal de sobremesa en cuña con un PC HP reaprovechado y una Raspberry Pi con Orbit OS. Prototipo abierto, Apache-2.0.">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<div class="borrador">BORRADOR · no publicado</div>
+
+<header class="nav">
+  <a class="logo" href="#inicio"><span class="orb"></span>ORBIT<b>TERMINAL</b></a>
+  <nav>
+    <a href="#que-es">Qué es</a><a href="#montaje">Montaje</a><a href="#dentro">Dentro</a>
+    <a href="#funciona">Cómo funciona</a><a href="#orbit-os">Orbit OS</a><a href="#hazlo" class="cta-mini">Hazte el tuyo</a>
+  </nav>
+</header>
+
+<main>
+<!-- HERO -->
+<section id="inicio" class="hero">
+  <div class="hero-txt">
+    <p class="kicker">// Prototipo abierto · Apache-2.0</p>
+    <h1>Dos mundos,<br><span>un terminal.</span></h1>
+    <p class="lead">Orbit Terminal es una cuña de sobremesa hecha en casa: un PC HP con segunda vida y una Raspberry Pi que lo dirige todo con <b>Orbit OS</b>. Mandos físicos, luz ámbar y un panel para trastear.</p>
+    <div class="ctas">
+      <a class="btn" href="#montaje">Ver cómo se monta</a>
+      <a class="btn ghost" href="https://github.com/Sopa-IA/Control-deck">Código y CAD</a>
+    </div>
+  </div>
+  <figure class="hero-img">
+    <img src="assets/img/01_msi_frontal_3-4.webp" alt="Render del Orbit Terminal visto de frente en tres cuartos: cuña oscura con pantalla inclinada, dos pomos y luz ámbar en el frontal" width="1600" height="1000">
+    <figcaption>Render del diseño CAD (prototipo)</figcaption>
+  </figure>
+</section>
+
+<!-- QUÉ ES -->
+<section id="que-es" class="bloque">
+  <p class="kicker">01 · Qué es</p>
+  <h2>Un terminal con dos cerebros</h2>
+  <div class="cols3">
+    <article class="card"><h3>El HP, de vuelta</h3><p>La placa mini-ITX de un HP Slimline 260-a110ns va dentro de la cuña. Sigue con su Windows de siempre.</p></article>
+    <article class="card"><h3>La Pi, al mando</h3><p>Una Raspberry Pi 4 ejecuta Orbit OS, controla la pantalla y enseña el escritorio del HP cuando se lo pides.</p></article>
+    <article class="card"><h3>Mandos de verdad</h3><p>Dos pomos y dos botones con un Arduino Nano: volumen, desplazamiento, menú y cambio de sistema.</p></article>
+  </div>
+  <p class="nota">Estado: <b>prototipo</b>. El software funciona en simulación y aún no se ha probado con el hardware real. El CAD es provisional.</p>
+</section>
+
+<!-- MONTAJE (pieza estrella) -->
+<section id="montaje" class="montaje" aria-label="Animación de montaje del Orbit Terminal">
+  <div class="montaje-sticky">
+    <canvas id="lienzo" width="1280" height="720" aria-hidden="true"></canvas>
+    <div class="montaje-ui">
+      <p class="kicker">02 · Pieza a pieza</p>
+      <div class="paso-actual" aria-live="polite"><span id="paso-num">00</span><span id="paso-txt">Desplázate para montar</span></div>
+      <ol id="pasos" class="pasos"></ol>
+      <div class="estilo" role="group" aria-label="Estilo del render">
+        <button type="button" data-estilo="realista" aria-pressed="true">Realista</button>
+        <button type="button" data-estilo="toon" aria-pressed="false">Toon</button>
+      </div>
+    </div>
+    <div class="barra"><i id="barra"></i></div>
+    <p class="montaje-nota">Render del CAD real del proyecto (provisional). Faltan las piezas comerciales sin modelo fiel: placa HP, disco, Nanos, ESP8266, OLED, HAT VHF, pulsadores y tira LED.</p>
+  </div>
+  <!-- Versión estática (prefers-reduced-motion) -->
+  <div class="montaje-estatico">
+    <p class="kicker">02 · Pieza a pieza</p>
+    <h2>Así se monta</h2>
+    <div class="estatico-grid">
+      <figure><img src="assets/montaje/explosionado.webp" alt="Vista explosionada del Orbit Terminal con sus piezas separadas" loading="lazy"><figcaption>Vista explosionada (render del diseño CAD)</figcaption></figure>
+      <figure><img src="assets/montaje/montado.webp" alt="Orbit Terminal montado con la pantalla y la luz ámbar encendidas" loading="lazy"><figcaption>Montado y encendido</figcaption></figure>
+    </div>
+    <ol id="pasos-estatico" class="pasos-lista"></ol>
+  </div>
+</section>
+
+<!-- DENTRO -->
+<section id="dentro" class="bloque">
+  <p class="kicker">03 · Qué lleva dentro</p>
+  <h2>Hardware reaprovechado y a la vista</h2>
+  <div class="dentro">
+    <figure class="marco"><img src="assets/montaje/interior.webp" alt="Render del interior: base, soporte del disco y bandeja con la Raspberry Pi 4" loading="lazy" width="620" height="300"><figcaption>Interior durante el montaje (render del diseño CAD; sin placa HP ni disco, que no tienen modelo fiel)</figcaption></figure>
+    <ul class="specs">
+      <li><b>Pantalla</b><span>MSI PRO MP161 E2U · 15,6" · 1920×1080 · inclinada 30°*</span></li>
+      <li><b>PC</b><span>Placa mini-ITX de HP Slimline 260-a110ns · AMD A6-7310 · 8 GB · Windows</span></li>
+      <li><b>Disco</b><span>HDD de 3,5"</span></li>
+      <li><b>Raspberry Pi 4</b><span>Una sola Pi, con HAT de radio VHF (OLED y antena SMA). Ejecuta Orbit OS</span></li>
+      <li><b>Arduino Nano ×2</b><span>Uno para los mandos y otro para prácticas</span></li>
+      <li><b>ESP8266</b><span>Con WLED para la tira LED ámbar</span></li>
+      <li><b>Periféricos</b><span>Teclado y ratón Bluetooth</span></li>
+      <li><b>OLED 0,96"</b><span>En el panel de prácticas</span></li>
+      <li><b>Carcasa</b><span>Cuña impresa en PLA+ negro mate: 4 piezas + base en 4, unidas con tornillos M3</span></li>
+      <li><b>Tamaño</b><span>≈ 456 × 300 mm de planta y ≈ 154 mm de alto sin patas*</span></li>
+    </ul>
+  </div>
+  <p class="nota">* Medidas aproximadas del CAD provisional; pueden cambiar.</p>
+  <div class="panel-trasero">
+    <figure class="marco"><img src="assets/montaje/trasera.webp" alt="Render de la trasera del Orbit Terminal: rejillas, panel de prácticas con pines y ventana de conectores del HP" loading="lazy" width="1280" height="720"><figcaption>Trasera (render del diseño CAD; la placa de puertos del HP se está rehaciendo)</figcaption></figure>
+    <div>
+      <h3>Panel de prácticas</h3>
+      <p>En la trasera, 24 pines del Nano de prácticas y 40 de la Pi, con rótulos en relieve: <code>OLED</code>, <code>PRG</code>, <code>ARD 5V</code>, <code>PI 3V3</code> y <code>NO UNIR</code>. Una pequeña OLED enseña el estado de los pines.</p>
+      <p>Pensado para aprender electrónica sin abrir la carcasa.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO FUNCIONA -->
+<section id="funciona" class="bloque">
+  <p class="kicker">04 · Cómo funciona</p>
+  <h2>Todo en casa, por un cable</h2>
+  <div class="esquema" role="img" aria-label="Esquema: el HP con Windows y Sunshine se une a la Raspberry Pi 4 con Orbit OS y Moonlight por un cable de red directo con IP fija; la Pi va a la pantalla MSI y recibe el teclado y ratón Bluetooth y los mandos del Arduino Nano">
+    <div class="nodo"><b>HP · Windows</b><small>Sunshine · se enciende con su botón</small></div>
+    <div class="cable"><span>Cable de red directo<br><small>IP fija · sin internet</small></span></div>
+    <div class="nodo amb"><b>Raspberry Pi 4 · Orbit OS</b><small>Moonlight + interfaz</small></div>
+    <div class="flecha">→</div>
+    <div class="nodo"><b>Pantalla MSI</b><small>solo conectada a la Pi</small></div>
+    <div class="entradas"><span>⌨ Teclado y ratón Bluetooth → Pi</span><span>◎ Pomos y botones → Arduino Nano → Pi</span></div>
+  </div>
+  <div class="cols3">
+    <article class="card"><h3>La Pi manda</h3><p>La pantalla va solo a la Pi. Orbit OS enseña su interfaz o el escritorio del HP con Moonlight, sin tocar el menú del monitor.</p></article>
+    <article class="card"><h3>Totalmente local</h3><p>El HP y la Pi se hablan por un cable de red directo con IP fija. Una vez instalado, no necesita internet.</p></article>
+    <article class="card"><h3>Sin cables por medio</h3><p>Teclado y ratón Bluetooth emparejados con la Pi. El HP se enciende a mano con su propio botón.</p></article>
+  </div>
+</section>
+
+<!-- ORBIT OS -->
+<section id="orbit-os" class="bloque">
+  <p class="kicker">05 · Orbit OS</p>
+  <h2>Explora · Crea · Controla</h2>
+  <p class="lead">La interfaz de la Pi, negra mate con acentos ámbar. Seis secciones: Inicio, Sistemas, Hardware, Controles, Herramientas y Configuración.</p>
+  <div class="galeria">
+    <figure class="ancha"><img src="assets/img/os_inicio.webp" alt="Captura de Orbit OS: pantalla de Inicio con el reloj, el anillo ámbar y los accesos rápidos" loading="lazy" width="1200" height="900"><figcaption>Inicio</figcaption></figure>
+    <figure><img src="assets/img/os_sistemas.webp" alt="Captura de Orbit OS: Sistemas, con el estado del HP y de la Raspberry Pi" loading="lazy" width="1400" height="640"><figcaption>Sistemas</figcaption></figure>
+  </div>
+  <p class="nota">Capturas de Orbit OS en modo simulación (recortadas). Los datos que se ven son de ejemplo.</p>
+</section>
+
+<!-- HAZLO TÚ -->
+<section id="hazlo" class="bloque hazlo">
+  <p class="kicker">06 · Hazte el tuyo</p>
+  <h2>Abierto de principio a fin</h2>
+  <div class="cols3">
+    <article class="card"><h3>CAD</h3><p>OpenSCAD paramétrico. Las piezas se dividen para caber en una impresora de cama 256 × 256 mm.</p></article>
+    <article class="card"><h3>Software</h3><p>Orbit OS (React + TypeScript), el hub orbitd para la Pi, el agente del HP y el firmware de los Nanos.</p></article>
+    <article class="card"><h3>Manual</h3><p>Manual de montaje paso a paso, de la base a los cables, en PDF.</p></article>
+  </div>
+  <div class="placeholder" role="img" aria-label="Imagen pendiente: foto real del prototipo montado"><span>imagen pendiente</span><small>foto real del prototipo montado</small></div>
+  <div class="ctas centro">
+    <a class="btn" href="https://github.com/Sopa-IA/Control-deck">Ver el repositorio</a>
+  </div>
+  <p class="nota">Licencia Apache-2.0. Prototipo en desarrollo: el CAD está marcado como no apto para fabricación hasta validarlo.</p>
+</section>
+</main>
+
+<footer class="pie">
+  <p><span class="orb"></span> Orbit Terminal · un proyecto de <b>Miguel Rodríguez Saiz</b></p>
+  <p>Código, CAD y documentación con licencia Apache-2.0 · <a href="https://github.com/Sopa-IA/Control-deck">github.com/Sopa-IA/Control-deck</a></p>
+  <p class="mini">Renders generados a partir del CAD del proyecto. Modelo de la Raspberry Pi 4: Innerscene (CC0).</p>
+</footer>
+
+<script src="assets/montaje/guion.js"></script>
+<script src="montaje.js"></script>
+</body>
+</html>
