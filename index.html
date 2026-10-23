@@ -9,13 +9,13 @@
 <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-<div class="borrador">BORRADOR · no publicado</div>
+<div class="borrador">PROTOTIPO EN DESARROLLO</div>
 
 <header class="nav">
   <a class="logo" href="#inicio"><span class="orb"></span>ORBIT<b>TERMINAL</b></a>
   <nav>
     <a href="#que-es">Qué es</a><a href="#montaje">Montaje</a><a href="#dentro">Dentro</a>
-    <a href="#funciona">Cómo funciona</a><a href="#orbit-os">Orbit OS</a><a href="#evolucion">Evolución</a><a href="#hazlo" class="cta-mini">Hazte el tuyo</a>
+    <a href="#funciona">Cómo funciona</a><a href="#orbit-os">Orbit OS</a><a href="#estado">Estado</a><a href="#ficha">Ficha</a><a href="#evolucion">Evolución</a><a href="#hazlo" class="cta-mini">Hazte el tuyo</a>
   </nav>
 </header>
 
@@ -46,7 +46,7 @@
     <article class="card"><h3>La Pi, al mando</h3><p>Una Raspberry Pi 4 ejecuta Orbit OS, controla la pantalla y enseña el escritorio del HP cuando se lo pides.</p></article>
     <article class="card"><h3>Mandos de verdad</h3><p>Dos pomos y dos botones con un Arduino Nano: volumen, desplazamiento, menú y cambio de sistema.</p></article>
   </div>
-  <p class="nota">Estado: <b>prototipo</b>. El software funciona en simulación y aún no se ha probado con el hardware real. El CAD es provisional.</p>
+  <p class="nota">Estado: <b>prototipo en desarrollo</b>. Orbit OS ya arranca en la Pi; el resto del software sigue en simulación y no se ha probado con el HP. El CAD es provisional. <a href="#estado">Ver qué está terminado y qué falta</a>.</p>
 </section>
 
 <!-- MONTAJE (pieza estrella) -->
@@ -120,9 +120,9 @@
     <div class="entradas"><span>⌨ Teclado y ratón Bluetooth → Pi</span><span>◎ Pomos y botones → Arduino Nano → Pi</span></div>
   </div>
   <div class="cols3">
-    <article class="card"><h3>La Pi manda</h3><p>La pantalla va solo a la Pi. Orbit OS enseña su interfaz o el escritorio del HP con Moonlight, sin tocar el menú del monitor.</p></article>
+    <article class="card"><h3>La Pi manda</h3><p>La pantalla va solo a la Pi. Orbit OS enseña su interfaz o el escritorio del HP con Moonlight, sin tocar el menú del monitor.</p><p class="card-estado"><span class="estado est-pend"><i aria-hidden="true">○</i>Pendiente</span> Aún sin probar contra el HP</p></article>
     <article class="card"><h3>Totalmente local</h3><p>El HP y la Pi se hablan por un cable de red directo con IP fija. Una vez instalado, no necesita internet.</p></article>
-    <article class="card"><h3>Sin cables por medio</h3><p>Teclado y ratón Bluetooth emparejados con la Pi. El HP se enciende a mano con su propio botón.</p></article>
+    <article class="card"><h3>Sin cables por medio</h3><p>Teclado y ratón Bluetooth emparejados con la Pi. El HP se enciende a mano con su propio botón.</p><p class="card-estado"><span class="estado est-pend"><i aria-hidden="true">○</i>Pendiente de confirmar</span> Bluetooth</p></article>
   </div>
 </section>
 
@@ -130,12 +130,75 @@
 <section id="orbit-os" class="bloque">
   <p class="kicker">05 · Orbit OS</p>
   <h2>Explora · Crea · Controla</h2>
+  <p class="estado-linea"><span class="estado est-prueba"><i aria-hidden="true">◐</i>En pruebas</span> Ya arranca en la Pi; el resto, en simulación</p>
   <p class="lead">La interfaz de la Pi, negra mate con acentos ámbar. Seis secciones: Inicio, Sistemas, Hardware, Controles, Herramientas y Configuración.</p>
   <div class="galeria">
     <figure class="ancha"><img src="assets/img/os_inicio.webp" alt="Captura de Orbit OS: pantalla de Inicio con el reloj, el anillo ámbar y los accesos rápidos" loading="lazy" width="1200" height="900"><figcaption>Inicio</figcaption></figure>
     <figure><img src="assets/img/os_sistemas.webp" alt="Captura de Orbit OS: Sistemas, con el estado del HP y de la Raspberry Pi" loading="lazy" width="1400" height="640"><figcaption>Sistemas</figcaption></figure>
   </div>
   <p class="nota">Capturas de Orbit OS en modo simulación (recortadas). Los datos que se ven son de ejemplo.</p>
+
+  <!-- DEMO DE VÍDEO: cuando haya vídeo real, sustituye el <div class="demo-hueco"> por:
+       <video controls playsinline preload="metadata" poster="assets/video/demo-poster.webp">
+         <source src="assets/video/demo-orbit-os.mp4" type="video/mp4">
+       </video>
+       y cambia la insignia «Pendiente» por la que toque. -->
+  <figure class="demo" id="demo">
+    <div class="demo-cab"><h3>Demo de Orbit OS</h3><span class="estado est-pend"><i aria-hidden="true">○</i>Pendiente</span></div>
+    <div class="demo-hueco" role="img" aria-label="Hueco reservado para el vídeo de demostración de Orbit OS, todavía sin vídeo">
+      <span class="demo-play" aria-hidden="true"></span>
+      <p>Vídeo cuando el cambio entre el escritorio de la Pi y el del HP esté validado.</p>
+    </div>
+  </figure>
+</section>
+
+<!-- ESTADO DEL PROYECTO -->
+<section id="estado" class="bloque">
+  <p class="kicker">Prototipo en desarrollo</p>
+  <h2>Estado del proyecto</h2>
+  <p class="lead">Qué está hecho y qué falta, parte por parte. Cada estado sale de la documentación del repositorio y de las fotos reales del montaje.</p>
+  <ul class="leyenda" aria-label="Leyenda de estados">
+    <li><span class="estado est-ok"><i aria-hidden="true">✓</i>Terminado</span><span>Hecho y comprobado</span></li>
+    <li><span class="estado est-prueba"><i aria-hidden="true">◐</i>En pruebas</span><span>Montado o funcionando en parte; se está probando</span></li>
+    <li><span class="estado est-pend"><i aria-hidden="true">○</i>Pendiente</span><span>Falta hacerlo, medirlo, probarlo o confirmarlo</span></li>
+  </ul>
+  <!-- Para cambiar un estado: sustituye la insignia de la fila por otra de las tres (est-ok, est-prueba, est-pend). -->
+  <ul class="estado-lista">
+    <li><span class="estado est-ok"><i aria-hidden="true">✓</i>Terminado</span><b>Carcasa impresa</b><span>Los cuatro trozos de la cuña, en PLA+ negro mate.</span></li>
+    <li><span class="estado est-ok"><i aria-hidden="true">✓</i>Terminado</span><b>Plantilla de agujeros de la placa HP</b><span>Impresa y comprobada sobre la placa real: los cuatro agujeros cuadran.</span></li>
+    <li><span class="estado est-prueba"><i aria-hidden="true">◐</i>En pruebas</span><b>Electrónica dentro de la carcasa</b><span>Pantalla MSI, placa del HP, disco y Raspberry Pi ya van montados (fotos del 22 y el 23 de octubre).</span></li>
+    <li><span class="estado est-prueba"><i aria-hidden="true">◐</i>En pruebas</span><b>Orbit OS en la Raspberry Pi</b><span>Arranca en la Pi a pantalla completa. El resto del software sigue en simulación.</span></li>
+    <li><span class="estado est-pend"><i aria-hidden="true">○</i>Pendiente</span><b>Cambio entre la Pi y el HP (Sunshine + Moonlight)</b><span>Programado y con tests, pero todavía sin probar contra el HP.</span></li>
+    <li><span class="estado est-pend"><i aria-hidden="true">○</i>Pendiente</span><b>Huecos del HDMI y el VGA</b><span>La placa de puertos del HP aún tiene que cuadrar con los conectores reales.</span></li>
+    <li><span class="estado est-pend"><i aria-hidden="true">○</i>Pendiente</span><b>Mandos: pomos, botones y Arduino Nano</b><span>El firmware compila, pero no se ha probado en la placa. Faltan las medidas de potenciómetros y pulsadores.</span></li>
+    <li><span class="estado est-pend"><i aria-hidden="true">○</i>Pendiente</span><b>Nano de prácticas y OLED 0,96"</b><span>Ejemplo escrito, sin probar. El módulo OLED no está elegido ni medido.</span></li>
+    <li><span class="estado est-pend"><i aria-hidden="true">○</i>Pendiente</span><b>ESP8266 con WLED y tira LED ámbar</b><span>Falta identificar la tira (tipo y tensión).</span></li>
+    <li><span class="estado est-pend"><i aria-hidden="true">○</i>Pendiente</span><b>HAT de radio VHF</b><span>Faltan sus medidas y saber si deja libre el conector de 40 pines.</span></li>
+    <li><span class="estado est-pend"><i aria-hidden="true">○</i>Pendiente</span><b>Bandeja de servicio v3</b><span>Rediseñada; falta imprimirla.</span></li>
+    <li><span class="estado est-pend"><i aria-hidden="true">○</i>Pendiente</span><b>Agente del HP en Windows</b><span>Apagar, reiniciar y volumen desde Orbit OS: sin validar en el HP.</span></li>
+    <li><span class="estado est-pend"><i aria-hidden="true">○</i>Pendiente de confirmar</span><b>Teclado y ratón Bluetooth</b><span>La instalación lo prepara; no consta que se haya probado.</span></li>
+  </ul>
+  <p class="nota">Fuente: <a href="https://github.com/Sopa-IA/Control-deck">Sopa-IA/Control-deck</a> (README, documento de estado y traspaso, guía de instalación de la Pi; parte de ello en un PR aún sin fusionar) y fotos reales del montaje. Actualizado el 23 oct 2026.</p>
+</section>
+
+<!-- FICHA DEL PROYECTO -->
+<section id="ficha" class="bloque">
+  <p class="kicker">Para aficionados</p>
+  <h2>Ficha del proyecto</h2>
+  <p class="lead">Los datos del prototipo que interesan a quien quiera hacerse uno. Lo que aún no se ha medido aparece como pendiente, sin cifras.</p>
+  <!-- Para rellenar un campo: cambia la insignia «Pendiente de medir» de <dd> por el valor medido y pon de dónde sale en <small>. -->
+  <dl class="ficha">
+    <div><dt>Coste de construcción</dt><dd><span class="estado est-pend"><i aria-hidden="true">○</i>Pendiente de medir</span></dd></div>
+    <div><dt>Horas invertidas</dt><dd><span class="estado est-pend"><i aria-hidden="true">○</i>Pendiente de medir</span></dd></div>
+    <div><dt>Peso final</dt><dd><span class="estado est-pend"><i aria-hidden="true">○</i>Pendiente de medir</span></dd></div>
+    <div><dt>Consumo eléctrico</dt><dd><span class="estado est-pend"><i aria-hidden="true">○</i>Pendiente de medir</span></dd></div>
+    <div><dt>Componentes reutilizados</dt><dd><span class="estado est-pend"><i aria-hidden="true">○</i>Pendiente de medir</span></dd></div>
+    <div><dt>Material</dt><dd>PLA+ negro mate</dd></div>
+    <div><dt>Impresora</dt><dd>Bambu Lab A1 <small>cama de 256 × 256 × 256 mm</small></dd></div>
+    <div><dt>Medidas</dt><dd>≈ 456 × 300 × 154 mm <small>provisionales, del CAD; alto sin patas</small></dd></div>
+    <div><dt>Inclinación de la pantalla</dt><dd>30° <small>provisional, del CAD</small></dd></div>
+    <div><dt>Piezas impresas</dt><dd>Carcasa en 4 piezas y base en 4, unidas con tornillos M3</dd></div>
+  </dl>
 </section>
 
 <!-- EVOLUCIÓN (fotos reales del prototipo en construcción) -->
@@ -148,7 +211,7 @@
     <li class="etapa">
       <div class="etapa-cab">
         <time datetime="2026-10-20">20 oct 2026</time>
-        <span class="chip chip-anterior">Fase de pruebas</span>
+        <span class="chip">Prueba de encaje</span>
       </div>
       <h3>Prueba de encaje</h3>
       <p>Primera prueba de encaje de las piezas impresas: la pantalla MSI, la placa del HP, el disco Toshiba con su soporte y la trasera con los puertos. Todavía era una fase de pruebas: en esta prueba se montaron dos Raspberry Pi, aunque la versión prevista lleva una sola.</p>
@@ -164,7 +227,7 @@
     <li class="etapa">
       <div class="etapa-cab">
         <time datetime="2026-10-22">22 oct 2026</time>
-        <span class="chip chip-anterior">Etapa anterior</span>
+        <span class="chip">Etapa anterior</span>
       </div>
       <h3>Pantalla montada y electrónica dentro de la carcasa</h3>
       <p>La pantalla MSI ya va montada en la carcasa, con la consola de mandos a la derecha. Por dentro, la placa del HP, el disco Toshiba con el ventilador encima y la Raspberry Pi. Prototipo en construcción.</p>
@@ -178,7 +241,7 @@
     <li class="etapa">
       <div class="etapa-cab">
         <time datetime="2026-10-23">23 oct 2026</time>
-        <span class="chip">En proceso</span>
+        <span class="chip">Última etapa</span>
       </div>
       <h3>Carcasa montada con la electrónica dentro</h3>
       <p>La carcasa impresa ya está montada con la placa del HP, el disco, la Raspberry Pi y la pantalla MSI en su sitio. Es un prototipo y sigue en desarrollo.</p>

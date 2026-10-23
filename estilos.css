@@ -11,7 +11,7 @@ body{margin:0;background:var(--fondo);color:var(--texto);font:16px/1.6 var(--san
 img{max-width:100%;height:auto;display:block}
 a{color:var(--ambar2)}
 code{font-family:var(--mono);color:var(--ambar2);background:#1b1b1f;border:1px solid var(--linea);padding:0 .35em;border-radius:4px;font-size:.9em}
-.borrador{position:fixed;z-index:50;left:10px;bottom:10px;font:600 11px var(--mono);letter-spacing:.12em;color:#111;background:var(--ambar);padding:4px 8px;border-radius:3px}
+.borrador{position:fixed;z-index:50;left:10px;bottom:10px;font:600 11px var(--mono);letter-spacing:.12em;color:#111;background:var(--ambar);padding:4px 8px;border-radius:3px;box-shadow:0 0 14px rgba(255,148,25,.35)}
 
 /* nav */
 .nav{position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.8rem clamp(1rem,4vw,3rem);
@@ -147,7 +147,7 @@ figcaption{font:.72rem var(--mono);color:var(--suave);letter-spacing:.08em;margi
 .etapa::before{content:"";position:absolute;left:calc(-1.6rem - 8px);top:.35rem;width:14px;height:14px;border-radius:50%;background:var(--fondo);border:2px solid var(--ambar);box-shadow:0 0 12px var(--brillo)}
 .etapa-cab{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;margin-bottom:.5rem}
 .etapa time{font:600 .85rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ambar)}
-.chip{font:.68rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ambar2);border:1px solid rgba(255,148,25,.45);border-radius:99px;padding:.1rem .55rem}
+.chip{font:.68rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--suave);border:1px solid var(--linea);border-radius:3px;padding:.1rem .5rem;background:#141417}
 .etapa p{color:#c9c5bf;max-width:44rem}
 .fotos-etapa{list-style:none;padding:0;margin:1.4rem 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem}
 .foto{display:block;width:100%;padding:0;border:1px solid var(--linea);border-radius:10px;overflow:hidden;background:#111;cursor:zoom-in;transition:border-color .2s,transform .3s}
@@ -168,4 +168,39 @@ figcaption{font:.72rem var(--mono);color:var(--suave);letter-spacing:.08em;margi
 @media (max-width:860px){.fotos-etapa{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:520px){.linea-tiempo{padding-left:1.1rem}.etapa::before{left:calc(-1.1rem - 8px)}.fotos-etapa{gap:.5rem}.visor figure{padding:0 .5rem}.v-ant,.v-sig{top:auto;bottom:1rem;transform:none}}
 @media (prefers-reduced-motion:reduce){.foto img{transition:none}.foto:hover img{transform:none}}
-.chip-anterior{color:var(--suave);border-color:var(--linea)}
+
+/* insignias de estado (las mismas en toda la web) */
+.estado{display:inline-flex;align-items:center;gap:.4em;font:600 .68rem/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;padding:.38em .7em;border-radius:99px;border:1px solid;white-space:nowrap;vertical-align:middle}
+.estado i{font-style:normal;font-size:1.05em;line-height:1}
+.est-ok{color:#7ee2a0;border-color:rgba(126,226,160,.45);background:rgba(126,226,160,.08)}
+.est-prueba{color:var(--ambar2);border-color:rgba(255,148,25,.55);background:rgba(255,148,25,.1)}
+.est-pend{color:#b9b5af;border-color:#55555c;border-style:dashed;background:rgba(255,255,255,.03)}
+.estado-linea{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap;color:var(--suave);font-size:.9rem;margin:-.3rem 0 1rem}
+.card-estado{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;margin-top:.9rem!important;font-size:.82rem;color:var(--suave)!important}
+.leyenda{list-style:none;padding:0;margin:1.5rem 0 1.2rem;display:flex;flex-wrap:wrap;gap:.6rem 1.6rem}
+.leyenda li{display:flex;align-items:center;gap:.6rem;font-size:.85rem;color:var(--suave)}
+.estado-lista{list-style:none;padding:0;margin:0;border-top:1px solid var(--linea)}
+.estado-lista li{display:grid;grid-template-columns:12rem minmax(0,16rem) minmax(0,1fr);gap:.4rem 1.2rem;align-items:center;padding:.85rem 0;border-bottom:1px solid var(--linea)}
+.estado-lista li .estado{justify-self:start}
+.estado-lista b{font-weight:600}
+.estado-lista span:not(.estado){color:#b8b4ae;font-size:.92rem}
+/* ficha */
+.ficha{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:.8rem;margin:1.5rem 0 0}
+.ficha div{background:linear-gradient(180deg,#17171b,#111114);border:1px solid var(--linea);border-radius:10px;padding:1rem 1.2rem}
+.ficha dt{font:.72rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--suave);margin-bottom:.45rem}
+.ficha dd{margin:0;font-weight:600;font-size:1.05rem}
+.ficha dd small{display:block;font:400 .78rem var(--sans);color:var(--suave);margin-top:.25rem}
+/* demo */
+.demo{margin:3rem 0 0}
+.demo-cab{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;margin-bottom:.8rem}
+.demo-cab h3{margin:0}
+.demo-hueco,.demo video{width:100%;aspect-ratio:16/9;border-radius:12px;border:1px dashed #4a4a50;background:repeating-linear-gradient(45deg,#121215 0 12px,#16161a 12px 24px)}
+.demo video{border-style:solid;background:#000;display:block}
+.demo-hueco{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;text-align:center;padding:1.5rem}
+.demo-hueco p{margin:0;color:var(--suave);max-width:30rem;font-size:.95rem}
+.demo-play{width:64px;height:64px;border-radius:50%;border:2px dashed #5a5a62;position:relative}
+.demo-play::after{content:"";position:absolute;left:25px;top:19px;border-left:18px solid #5a5a62;border-top:13px solid transparent;border-bottom:13px solid transparent}
+@media (max-width:860px){
+  .estado-lista li{grid-template-columns:minmax(0,1fr)}
+  .estado-lista li .estado{grid-row:1}
+}
