@@ -168,3 +168,4 @@ figcaption{font:.72rem var(--mono);color:var(--suave);letter-spacing:.08em;margi
 @media (max-width:860px){.fotos-etapa{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:520px){.linea-tiempo{padding-left:1.1rem}.etapa::before{left:calc(-1.1rem - 8px)}.fotos-etapa{gap:.5rem}.visor figure{padding:0 .5rem}.v-ant,.v-sig{top:auto;bottom:1rem;transform:none}}
 @media (prefers-reduced-motion:reduce){.foto img{transition:none}.foto:hover img{transform:none}}
+.chip-anterior{color:var(--suave);border-color:var(--linea)}
