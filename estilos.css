@@ -204,3 +204,4 @@ figcaption{font:.72rem var(--mono);color:var(--suave);letter-spacing:.08em;margi
   .estado-lista li{grid-template-columns:minmax(0,1fr)}
   .estado-lista li .estado{grid-row:1}
 }
+.foto-hazlo.vertical{max-width:440px}
