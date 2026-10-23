@@ -140,3 +140,31 @@ figcaption{font:.72rem var(--mono);color:var(--suave);letter-spacing:.08em;margi
   .montaje-estatico{display:block}
   *{transition:none!important;animation:none!important}
 }
+
+/* evolución: línea de tiempo con fotos reales */
+.linea-tiempo{list-style:none;margin:2.5rem 0 0;padding:0 0 0 1.6rem;border-left:2px solid var(--linea);position:relative}
+.etapa{position:relative;margin-bottom:3rem}
+.etapa::before{content:"";position:absolute;left:calc(-1.6rem - 8px);top:.35rem;width:14px;height:14px;border-radius:50%;background:var(--fondo);border:2px solid var(--ambar);box-shadow:0 0 12px var(--brillo)}
+.etapa-cab{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;margin-bottom:.5rem}
+.etapa time{font:600 .85rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ambar)}
+.chip{font:.68rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ambar2);border:1px solid rgba(255,148,25,.45);border-radius:99px;padding:.1rem .55rem}
+.etapa p{color:#c9c5bf;max-width:44rem}
+.fotos-etapa{list-style:none;padding:0;margin:1.4rem 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem}
+.foto{display:block;width:100%;padding:0;border:1px solid var(--linea);border-radius:10px;overflow:hidden;background:#111;cursor:zoom-in;transition:border-color .2s,transform .3s}
+.foto img{width:100%;aspect-ratio:3/2;object-fit:cover;transition:transform .5s}
+.foto:hover,.foto:focus-visible{border-color:var(--ambar);outline:none}
+.foto:hover img,.foto:focus-visible img{transform:scale(1.04)}
+.foto-hazlo{margin:2rem auto 0;max-width:720px}
+.foto-hazlo img{width:100%;border:1px solid var(--linea);border-radius:12px}
+.foto-hazlo figcaption,.visor figcaption{font:.78rem var(--mono);color:var(--suave);margin-top:.6rem;text-align:center}
+.visor{border:0;padding:0;background:transparent;max-width:none;max-height:none;width:100vw;height:100vh;color:var(--texto)}
+.visor[open]{display:flex;align-items:center;justify-content:center}
+.visor::backdrop{background:rgba(6,6,8,.92);backdrop-filter:blur(6px)}
+.visor figure{margin:0;padding:0 3.5rem}
+.visor img{max-width:min(92vw,1000px);max-height:80vh;width:auto;border-radius:10px;border:1px solid var(--linea)}
+.visor button{position:absolute;background:rgba(20,20,23,.85);color:var(--texto);border:1px solid var(--linea);border-radius:50%;width:44px;height:44px;font-size:1.6rem;line-height:1;cursor:pointer}
+.visor button:hover{border-color:var(--ambar);color:var(--ambar)}
+.v-cerrar{top:1rem;right:1rem}.v-ant{left:1rem;top:50%;transform:translateY(-50%)}.v-sig{right:1rem;top:50%;transform:translateY(-50%)}
+@media (max-width:860px){.fotos-etapa{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.linea-tiempo{padding-left:1.1rem}.etapa::before{left:calc(-1.1rem - 8px)}.fotos-etapa{gap:.5rem}.visor figure{padding:0 .5rem}.v-ant,.v-sig{top:auto;bottom:1rem;transform:none}}
+@media (prefers-reduced-motion:reduce){.foto img{transition:none}.foto:hover img{transform:none}}

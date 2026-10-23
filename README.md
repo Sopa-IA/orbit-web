@@ -3,7 +3,7 @@
 Web estática del **Orbit Terminal**, el ciberdeck de Miguel Rodríguez Saiz: una consola en cuña impresa en PLA+ que une un PC HP con Windows y una Raspberry Pi 4 con Orbit OS, con una pantalla MSI PRO MP161 E2U de 15,6".
 
 - Proyecto (hardware, CAD y software): https://github.com/Sopa-IA/Control-deck
-- La web es HTML + CSS + JS sin dependencias externas. Incluye una animación de montaje por scroll (variantes realista y toon) renderizada con Blender a partir del CAD del proyecto.
+- La web es HTML + CSS + JS sin dependencias externas. Incluye la sección «La evolución del Orbit» (línea de tiempo con fotos reales del prototipo en construcción; para añadir etapas, copia un bloque `<li class="etapa">` en `index.html`) y una animación de montaje por scroll (variantes realista y toon) renderizada con Blender a partir del CAD del proyecto.
 - Las medidas y el diseño son provisionales: el CAD está en desarrollo.
 
 ## Créditos
@@ -22,6 +22,7 @@ Se han dejado fuera las piezas comerciales sin modelo 3D fiel: ESP8266, step-dow
 **Imágenes**
 - `assets/img/01_msi_frontal_3-4.webp`: render del diseño CAD de Control-deck (Apache-2.0).
 - `assets/img/os_*.webp`: recortes de capturas de Orbit OS de Control-deck (Apache-2.0).
+- `assets/fotos/`: fotos reales del prototipo en construcción, © 2026 Miguel Rodríguez Saiz. Todos los derechos reservados; no están cubiertas por la licencia Apache-2.0 ni por CC BY-SA.
 - `assets/montaje/`: renders propios con Blender a partir de la geometría anterior. Como muestran la placa Arduino Nano (CC BY-SA 4.0), estos renders se ofrecen también bajo CC BY-SA 4.0.
 
 **Herramientas**: OpenSCAD, Blender (Cycles, Freestyle), gmsh, Pillow.

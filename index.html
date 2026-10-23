@@ -15,7 +15,7 @@
   <a class="logo" href="#inicio"><span class="orb"></span>ORBIT<b>TERMINAL</b></a>
   <nav>
     <a href="#que-es">Qué es</a><a href="#montaje">Montaje</a><a href="#dentro">Dentro</a>
-    <a href="#funciona">Cómo funciona</a><a href="#orbit-os">Orbit OS</a><a href="#hazlo" class="cta-mini">Hazte el tuyo</a>
+    <a href="#funciona">Cómo funciona</a><a href="#orbit-os">Orbit OS</a><a href="#evolucion">Evolución</a><a href="#hazlo" class="cta-mini">Hazte el tuyo</a>
   </nav>
 </header>
 
@@ -138,6 +138,43 @@
   <p class="nota">Capturas de Orbit OS en modo simulación (recortadas). Los datos que se ven son de ejemplo.</p>
 </section>
 
+<!-- EVOLUCIÓN (fotos reales del prototipo en construcción) -->
+<section id="evolucion" class="bloque evolucion">
+  <p class="kicker">En proceso · fotos reales</p>
+  <h2>La evolución del Orbit</h2>
+  <p class="lead">El Orbit Terminal está en construcción. Aquí va quedando su proceso, etapa a etapa, con fotos reales del montaje en curso; el diseño aún puede cambiar.</p>
+  <ol class="linea-tiempo">
+    <!-- Para añadir una etapa: copia un <li class="etapa"> completo, cambia la fecha (datetime y texto), el título, el texto y las fotos (en assets/fotos/). La más reciente va arriba. -->
+    <li class="etapa">
+      <div class="etapa-cab">
+        <time datetime="2026-10-23">23 oct 2026</time>
+        <span class="chip">En proceso</span>
+      </div>
+      <h3>Carcasa montada con la electrónica dentro</h3>
+      <p>La carcasa impresa ya está montada con la placa del HP, el disco, la Raspberry Pi y la pantalla MSI en su sitio. Es un prototipo y sigue en desarrollo.</p>
+      <ul class="fotos-etapa">
+        <li><button type="button" class="foto" data-full="assets/fotos/01-lateral-izquierdo.webp" data-pie="Lateral izquierdo"><img src="assets/fotos/01-lateral-izquierdo.webp" alt="Lateral izquierdo del prototipo: carcasa negra en cuña con la pantalla inclinada, rejilla de ventilación y huecos en el lateral." loading="lazy" width="461" height="334"></button></li>
+        <li><button type="button" class="foto" data-full="assets/fotos/02-trasera-puertos.webp" data-pie="Trasera con los puertos del HP"><img src="assets/fotos/02-trasera-puertos.webp" alt="Trasera del prototipo: dos módulos negros con rejillas y huecos; en la ventana de la derecha asoman los puertos traseros de la placa HP." loading="lazy" width="603" height="334"></button></li>
+        <li><button type="button" class="foto" data-full="assets/fotos/03-tres-cuartos-derecha.webp" data-pie="Tres cuartos, lado derecho"><img src="assets/fotos/03-tres-cuartos-derecha.webp" alt="Vista en tres cuartos desde la derecha: pantalla inclinada, anillos de los pomos junto a la pantalla y rejilla de ventilación en el lateral." loading="lazy" width="460" height="334"></button></li>
+        <li><button type="button" class="foto" data-full="assets/fotos/04-frontal-pantalla.webp" data-pie="Frontal con la pantalla MSI"><img src="assets/fotos/04-frontal-pantalla.webp" alt="Vista frontal: pantalla MSI apagada y, a su derecha, dos anillos para pomos y dos agujeros redondos." loading="lazy" width="531" height="328"></button></li>
+        <li><button type="button" class="foto" data-full="assets/fotos/05-interior-arriba.webp" data-pie="Interior desde arriba"><img src="assets/fotos/05-interior-arriba.webp" alt="Interior visto desde arriba sin la pantalla: placa base HP con memoria y disipador, disco duro con un ventilador encima, Raspberry Pi con HAT y cables." loading="lazy" width="484" height="328"></button></li>
+        <li><button type="button" class="foto" data-full="assets/fotos/06-base-inferior.webp" data-pie="Base inferior"><img src="assets/fotos/06-base-inferior.webp" alt="Base inferior de la carcasa: piezas negras unidas con tornillos, rejillas de ventilación y una tapa rectangular." loading="lazy" width="509" height="328"></button></li>
+        <li><button type="button" class="foto" data-full="assets/fotos/07-tres-cuartos-trasera-izquierda.webp" data-pie="Tres cuartos, trasera izquierda"><img src="assets/fotos/07-tres-cuartos-trasera-izquierda.webp" alt="Vista en tres cuartos de la carcasa abierta, con cables del interior a la vista, anillos para pomos y rejilla de ventilación en el lateral." loading="lazy" width="497" height="351"></button></li>
+        <li><button type="button" class="foto" data-full="assets/fotos/08-interior-detalle.webp" data-pie="Otra vista del interior"><img src="assets/fotos/08-interior-detalle.webp" alt="Otra vista del interior desde arriba: placa base HP, disco duro con ventilador encima, Raspberry Pi con HAT y cableado." loading="lazy" width="517" height="351"></button></li>
+        <li><button type="button" class="foto" data-full="assets/fotos/09-trasera.webp" data-pie="Trasera"><img src="assets/fotos/09-trasera.webp" alt="Trasera del prototipo con rejillas, huecos y la ventana de los puertos de la placa HP." loading="lazy" width="510" height="351"></button></li>
+      </ul>
+    </li>
+  </ol>
+  <p class="nota">Fotos reales del prototipo en construcción, no de un producto terminado. Fotos © Miguel Rodríguez Saiz.</p>
+</section>
+
+<dialog class="visor" id="visor" aria-label="Foto ampliada">
+  <figure><img src="" alt=""><figcaption></figcaption></figure>
+  <button type="button" class="v-cerrar" aria-label="Cerrar">×</button>
+  <button type="button" class="v-ant" aria-label="Foto anterior">‹</button>
+  <button type="button" class="v-sig" aria-label="Foto siguiente">›</button>
+</dialog>
+
 <!-- HAZLO TÚ -->
 <section id="hazlo" class="bloque hazlo">
   <p class="kicker">06 · Hazte el tuyo</p>
@@ -147,7 +184,7 @@
     <article class="card"><h3>Software</h3><p>Orbit OS (React + TypeScript), el hub orbitd para la Pi, el agente del HP y el firmware de los Nanos.</p></article>
     <article class="card"><h3>Manual</h3><p>Manual de montaje paso a paso, de la base a los cables, en PDF.</p></article>
   </div>
-  <div class="placeholder" role="img" aria-label="Imagen pendiente: foto real del prototipo montado"><span>imagen pendiente</span><small>foto real del prototipo montado</small></div>
+  <figure class="foto-hazlo"><img src="assets/fotos/03-tres-cuartos-derecha.webp" alt="El prototipo del Orbit Terminal en tres cuartos desde la derecha: carcasa negra en cuña con la pantalla inclinada y los anillos de los pomos" loading="lazy" width="460" height="334"><figcaption>Prototipo en construcción (foto real). El diseño aún puede cambiar.</figcaption></figure>
   <div class="ctas centro">
     <a class="btn" href="https://github.com/Sopa-IA/Control-deck">Ver el repositorio</a>
   </div>
@@ -158,10 +195,11 @@
 <footer class="pie">
   <p><span class="orb"></span> Orbit Terminal · un proyecto de <b>Miguel Rodríguez Saiz</b></p>
   <p>Código, CAD y documentación con licencia Apache-2.0 · <a href="https://github.com/Sopa-IA/Control-deck">github.com/Sopa-IA/Control-deck</a></p>
-  <p class="mini">Renders generados a partir del CAD del proyecto. Modelo de la Raspberry Pi 4: Innerscene (CC0). Arduino Nano: placa oficial V3.3 de Arduino (CC BY-SA 4.0) con modelos 3D de KiCad (CC-BY-SA 4.0); los renders de montaje se ofrecen también bajo CC BY-SA 4.0. Disco según SFF-8301 y SFF-8323. Módulos de RAM: 133,35 × 30 mm (Kingston HyperX blu).</p>
+  <p class="mini">Renders generados a partir del CAD del proyecto. Modelo de la Raspberry Pi 4: Innerscene (CC0). Arduino Nano: placa oficial V3.3 de Arduino (CC BY-SA 4.0) con modelos 3D de KiCad (CC-BY-SA 4.0); los renders de montaje se ofrecen también bajo CC BY-SA 4.0. Disco según SFF-8301 y SFF-8323. Fotos reales del prototipo © Miguel Rodríguez Saiz. Módulos de RAM: 133,35 × 30 mm (Kingston HyperX blu).</p>
 </footer>
 
 <script src="assets/montaje/guion.js"></script>
 <script src="montaje.js"></script>
+<script src="galeria.js"></script>
 </body>
 </html>
