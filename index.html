@@ -138,17 +138,16 @@
   </div>
   <p class="nota">Capturas de Orbit OS en modo simulación (recortadas). Los datos que se ven son de ejemplo.</p>
 
-  <!-- DEMO DE VÍDEO: cuando haya vídeo real, sustituye el <div class="demo-hueco"> por:
-       <video controls playsinline preload="metadata" poster="assets/video/demo-poster.webp">
-         <source src="assets/video/demo-orbit-os.mp4" type="video/mp4">
-       </video>
-       y cambia la insignia «Pendiente» por la que toque. -->
+  <!-- DEMO DE VÍDEO: de momento es una animación ilustrativa hecha en Blender (assets/demo/).
+       Cuando haya vídeo real del cambio Pi → HP, cambia los <source> por el vídeo real, quita el pie
+       de animación y cambia la insignia «Pendiente» por la que toque. -->
   <figure class="demo" id="demo">
     <div class="demo-cab"><h3>Demo de Orbit OS</h3><span class="estado est-pend"><i aria-hidden="true">○</i>Pendiente</span></div>
-    <div class="demo-hueco" role="img" aria-label="Hueco reservado para el vídeo de demostración de Orbit OS, todavía sin vídeo">
-      <span class="demo-play" aria-hidden="true"></span>
-      <p>Vídeo cuando el cambio entre el escritorio de la Pi y el del HP esté validado.</p>
-    </div>
+    <video autoplay muted loop playsinline controls preload="metadata" poster="assets/demo/demo-orbit-os-poster.webp" width="1280" height="720" aria-label="Animación ilustrativa en Blender: la pantalla del Orbit muestra Orbit OS, se pulsa Cambiar sistema y aparece una pantalla neutra con el texto Escritorio del HP (Windows) vía Moonlight. No es una grabación real.">
+      <source src="assets/demo/demo-orbit-os.webm" type="video/webm">
+      <source src="assets/demo/demo-orbit-os.mp4" type="video/mp4">
+    </video>
+    <figcaption class="demo-pie">Animación ilustrativa hecha en Blender. El vídeo real llegará cuando el cambio Pi → HP esté validado.</figcaption>
   </figure>
 </section>
 

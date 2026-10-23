@@ -205,3 +205,5 @@ figcaption{font:.72rem var(--mono);color:var(--suave);letter-spacing:.08em;margi
   .estado-lista li .estado{grid-row:1}
 }
 .foto-hazlo.vertical{max-width:440px}
+.demo video{height:auto}
+.demo-pie{margin-top:.7rem;font-size:.85rem;color:var(--suave)}
